@@ -190,9 +190,7 @@ $(document).ready(function () {
 
 
     function startGame() {
-        let container = $(".content-human");
-        let takeCard = $(".take");
-
+       
         switch (turn) {
             case false:
                 showTurn();
@@ -203,19 +201,6 @@ $(document).ready(function () {
                 break;
             case true:
                 showTurn();
-                takeCard.click(function () {
-                    let card = cards.pop();
-                    
-                    player2.push(card);
-
-                    let img = $("<img></img>").attr('src', 'img/' + card.name); // else cards[i].name
-                    img.attr('class', 'card humancard ' + card.id);
-                    img.attr('alt', card.id);
-                    container.append(img);
-
-                    console.log(cards);
-                });
-
                 $(document).on('click', '.humancard', function (e) {
                     var imagename = $(this).attr("alt");
                     for (let i = 0; i < player2.length; i++) {
@@ -226,14 +211,13 @@ $(document).ready(function () {
                             discards.push(chosen);
                             console.log(player2);
                             showCardInPlay(discards);
-                            turn = false;
-                           
+                            turn = false; 
+                            startGame();
                         }
                     }
-                    startGame();
+                   
                 });
                
-                
                 break;
         }
 
@@ -335,6 +319,25 @@ $(document).ready(function () {
         container.addClass('humancard');
         //$(".humancard").click(function(){ return true});
     }
+
+    function takeCard(){
+        let container = $(".content-human");
+        let takeCard = $(".take");
+        takeCard.click(function () {
+            let card = cards.pop();
+            
+            player2.push(card);
+
+            let img = $("<img></img>").attr('src', 'img/' + card.name); // else cards[i].name
+            img.attr('class', 'card humancard ' + card.id);
+            img.attr('alt', card.id);
+            container.append(img);
+            console.log(cards);
+        });
+
+    }
+
+    takeCard();
 
 
 
