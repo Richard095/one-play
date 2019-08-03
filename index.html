@@ -20,7 +20,7 @@
 
         <!-- Name -->
         <div class="container d-flex ustify-content-center">
-            <div class="row player1  mx-auto m-2 btn btn-light text-primary" id="btnTurnP1">Jugador 1</div>
+            <div class="row player1  mx-auto m-1 btn btn-light text-primary" id="btnTurnP1">Jugador 1</div>
         </div>
 
 
@@ -34,19 +34,25 @@
 
         <!-- TABLERO -->
         <div class="row mx-auto m-2 card-body" style="background: #f2f2f2; width: 600px;">
+
+
+            <!-- MAZO -->
             <div class="col-5 content-cards d-flex justify-content-center decks">
                 <img class="card  take" src="img/default.jpg">
             </div>
+
+
+
             <div class="col-5 content-cards d-flex justify-content-center playing ">
                 <!-- <img class="card" src="img/robados.jpg"> -->
             </div>
             <div class="col-2 content-cards ">
                 <button class="btn btn-light m-4 p-3" id="btnCardInPlay"></button>
-                <button class="btn btn-light m-4 text-primary">1</button>
+                <button class="btn btn-light m-4 text-primary " id="one">1</button>
             </div>
 
             <div class="container d-flex justify-content-center">
-                <button class="btn btn-primary turnoPlayer"></button>
+                <button class="btn btn-primary turnoPlayer m-2"></button>
             </div>
         </div>
 
@@ -56,7 +62,7 @@
         <!-- Name  -->
 
         <div class="container d-flex justify-content-center">
-            <div class="row player1 mx-auto m-2 btn btn-light text-primary" id="btnTurnP2">Jugador 2</div>
+            <div class="row player1 mx-auto m-1 btn btn-light text-primary" id="btnTurnP2">Jugador 2</div>
         </div>
 
         <!-- CARD PLAYER -->
@@ -69,7 +75,7 @@
 
   
      <!-- Modal -->
-     <div class="modal fade" id="myModal" role="dialog">
+     <div class="modal fade" id="myModal" role="dialog" data-toggle="modal" data-backdrop="static" data-keyboard="false">
             <div class="modal-dialog">
 
                 <!-- Modal content-->
@@ -81,16 +87,16 @@
                     <div class="modal-body">
                        <div class="row">
                             <div class="col-3">
-                                    <button class="btn btn-danger m-4 p-3" id="red"></button>
+                                    <button class="btn btn-danger m-4 p-3" id="redButton" data-dismiss="modal" ></button>
                                 </div>
                                 <div class="col-3">
-                                    <button class="btn btn-success m-4 p-3" id="green"></button>
+                                    <button class="btn btn-success m-4 p-3" id="greenButton" data-dismiss="modal"></button>
                                 </div>
                                 <div class="col-3">
-                                    <button class="btn btn-primary m-4 p-3" id="blue"></button>
+                                    <button class="btn btn-primary m-4 p-3" id="blueButton" data-dismiss="modal"></button>
                                 </div>
                                 <div class="col-3">
-                                    <button class="btn btn-warning m-4 p-3" id="yelollow"></button>
+                                    <button class="btn btn-warning m-4 p-3" id="yelollowButton" data-dismiss="modal"></button>
                                 </div>
                        </div>
                     </div>
@@ -101,6 +107,8 @@
 
             </div>
         </div>
+
+    
 
 
 
